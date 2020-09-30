@@ -1,0 +1,9 @@
+<tr *ngFor="let emp of employees">
+    <th scope="row">{{emp.id}}</th>
+    <td>{{emp.name}}</td>
+    <td>{{emp.gender}}</td>
+    <td>{{emp.skills}}</td>
+    <td>{{emp.project}}</td>
+    <td>{{emp.hcm}}</td>
+    <td><button class="btn btn-danger" (click)="delete(emp)">Delete</button></td>
+</tr>
