@@ -9,6 +9,10 @@ import { TableBodyComponent } from './table-body/table-body.component';
 import { EmployeeService } from './employee.service';
 import { AddEmpComponent } from './add-emp/add-emp.component';
 import { FormsModule } from '@angular/forms';
+import { ParentComponent } from './parent/parent.component';
+import { Sibling1Component } from './parent/sibling1/sibling1.component';
+import { Sibling2Component } from './parent/sibling2/sibling2.component';
+import { SharedService } from './parent/shared.service';
 
 @NgModule({
   declarations: [
@@ -16,14 +20,17 @@ import { FormsModule } from '@angular/forms';
     TableComponent,
     TableHeaderComponent,
     TableBodyComponent,
-    AddEmpComponent
+    AddEmpComponent,
+    ParentComponent,
+    Sibling1Component,
+    Sibling2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [EmployeeService],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
