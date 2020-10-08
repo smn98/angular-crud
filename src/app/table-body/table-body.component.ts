@@ -11,14 +11,20 @@ export class TableBodyComponent implements OnInit {
   employees;
 
   delete(emp) {
-    this.employeeService.deleteEmployees(emp);
+    this.employees.splice(this.employees.indexOf(emp), 1);
   }
 
   constructor(public employeeService: EmployeeService) {
-    this.employees = employeeService.getEmployees();
+
   }
 
   ngOnInit(): void {
+    this.employeeService.getEmployees().subscribe(employees => this.employees = employees);
+    this.employeeService.addEmployeeSubject.subscribe(employee => {
+      this.employees.push(employee)
+    }
+    );
+
   }
 
 }

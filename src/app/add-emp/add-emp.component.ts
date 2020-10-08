@@ -28,7 +28,7 @@ export class AddEmpComponent implements OnInit {
       hcm: this.hcm
     }
     console.log(emp);
-    this.employeeService.addEmployees(emp);
+    this.employeeService.addEmployeeSubject.next(emp);
   }
 
 
