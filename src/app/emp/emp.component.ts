@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
-import { EmployeeService } from './emp/employee.service';
+import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from './employee.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-emp',
+  templateUrl: './emp.component.html',
+  styleUrls: ['./emp.component.css']
 })
-export class AppComponent {
+export class EmpComponent {
+
   gender;
 
   constructor(private employeeService: EmployeeService){}
@@ -19,4 +20,5 @@ export class AppComponent {
       alert("Please select one option!")
     }
   }
+
 }

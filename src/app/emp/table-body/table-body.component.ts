@@ -20,11 +20,14 @@ export class TableBodyComponent implements OnInit {
 
   ngOnInit(): void {
     this.employeeService.getEmployees().subscribe(employees => this.employees = employees);
+
     this.employeeService.addEmployeeSubject.subscribe(employee => {
       this.employees.push(employee)
-    }
-    );
+    })
 
+    this.employeeService.updateEmployeeSubject.subscribe(gender => {
+      this.employeeService.filterEmployees(gender).subscribe(employees => this.employees = employees);
+    })
   }
 
 }

@@ -1,0 +1,74 @@
+<div class="container">
+  <form [formGroup]="form" class="m-5">
+
+    <div class="form-group">
+      <input formControlName="associateName" type="text" class="form-control" placeholder="Name">
+      <div *ngIf="associateName.touched && associateName.invalid">
+        <small *ngIf="associateName.errors.required" class="form-text text-red">Please enter the Associate Name</small>
+        <small *ngIf="!associateName.errors.required" class="form-text text-red">Accepts Alphabets, space & Min 5 to Max
+          30 Char</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input formControlName="associateID" type="text" class="form-control" placeholder="ID">
+      <div *ngIf="associateID.touched && associateID.invalid">
+        <small *ngIf="associateID.errors.required" class="form-text text-red">Please enter the Associate id</small>
+        <small *ngIf="!associateID.errors.required" class="form-text text-red">Invalid Associate Id</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input formControlName="projectID" type="text" class="form-control" placeholder="Project">
+      <div *ngIf="projectID.touched && projectID.invalid">
+        <small *ngIf="projectID.errors.required" class="form-text text-red">Please enter the Project id</small>
+        <small *ngIf="!projectID.errors.required" class="form-text text-red">Invalid Project Id</small>
+      </div>
+    </div>
+
+    <!-- radio -->
+    <div class="form-group" (change)="locationChanged()">
+      <div class="form-check form-check-inline">
+        <input formControlName="location" class="form-check-input" type="radio" name="location" value="offShore">
+        <label class="form-check-label" for="offShore">
+          Offshore
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input formControlName="location" class="form-check-input" type="radio" name="location" value="onShore">
+        <label class="form-check-label" for="onShore">
+          Onshore
+        </label>
+      </div>
+      <div *ngIf="location.touched && location.invalid">
+        <small class="form-text text-red">Please enter location</small>
+      </div>
+    </div>
+    <!-- radio -->
+
+    <!-- location select -->
+    <div class="form-group">
+      <select formControlName="selectedLocation" class="form-control">
+        <option value="" disabled selected>Select location</option>
+        <option *ngFor="let item of locationList" [value]="item">{{item}}</option>
+      </select>
+      <div *ngIf="selectedLocation.touched && selectedLocation.invalid">
+        <small class="form-text text-red">Please select location</small>
+      </div>
+    </div>
+
+
+
+    <!-- comment -->
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Comment</label>
+      <textarea formControlName="comment" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <div *ngIf="comment.touched && comment.invalid">
+        <small class="form-text text-red">Please enter comments</small>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!form.valid">Submit</button>
+    <button type="reset" class="ml-3 btn btn-warning" (click)="form.reset()">Reset</button>
+  </form>
+</div>
