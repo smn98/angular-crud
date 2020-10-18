@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from '../employee.interface';
 import { EmployeeService } from '../employee.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { EmployeeService } from '../employee.service';
 })
 export class TableBodyComponent implements OnInit {
 
-  employees;
+  employees: Employee[];
 
   delete(emp) {
     this.employees.splice(this.employees.indexOf(emp), 1);
@@ -19,7 +20,7 @@ export class TableBodyComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.employeeService.getEmployees().subscribe(employees => this.employees = employees);
+    this.employeeService.getEmployees().subscribe(employees => this.employees = employees as Employee[]);
 
     this.employeeService.addEmployeeSubject.subscribe(employee => {
       this.employees.push(employee)

@@ -2,6 +2,7 @@
   "name": "cognizant",
   "version": "0.0.0",
   "scripts": {
+    "deploy": "ng deploy --base-href=https://smn98.github.io/angular-crud/",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
