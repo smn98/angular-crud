@@ -1,12 +1,12 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedService } from './shared.service';
 
 @Component({
-  selector: 'app-parent',
-  templateUrl: './parent.component.html',
-  styleUrls: ['./parent.component.css']
+  selector: 'app-observables',
+  templateUrl: './observables.component.html',
+  styleUrls: ['./observables.component.css']
 })
-export class ParentComponent implements OnInit {
+export class ObservablesComponent implements OnInit {
 
   title: string = "Parent";
 
@@ -15,5 +15,6 @@ export class ParentComponent implements OnInit {
   ngOnInit(): void {
     this.sharedService.message.subscribe((title) => this.title = title);
   }
+
 
 }

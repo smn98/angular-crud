@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'main-form',
+  selector: 'app-main-form',
   templateUrl: './main-form.component.html',
   styleUrls: ['./main-form.component.css']
 })
@@ -76,6 +76,4 @@ export class MainFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
 }

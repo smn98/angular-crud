@@ -1,8 +1,6 @@
 import { EventEmitter, Injectable, OnInit } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SharedService implements OnInit{
 
   title: string;

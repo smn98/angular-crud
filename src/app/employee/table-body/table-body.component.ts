@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../employee.interface';
-import { EmployeeService } from '../employee.service';
+import { Employee } from '../../employee/employee.interface';
+import { EmployeeService } from '../../employee/employee.service';
 
 @Component({
   selector: '[app-table-body]',

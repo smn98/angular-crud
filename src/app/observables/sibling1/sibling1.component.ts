@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SharedService } from '../shared.service';
+import { SharedService } from '../../observables/shared.service';
 
 @Component({
   selector: 'app-sibling1',
