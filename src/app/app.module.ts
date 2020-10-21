@@ -10,6 +10,7 @@ import { EmployeeModule } from './employee/employee.module';
 
 @NgModule({
   declarations: [
+    KeyObject,
     AppComponent
   ],
   imports: [
